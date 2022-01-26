@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import ProductList from './ProductList'
+import ListaProductos from './ListaProductos'
 
 class ProductsDb extends Component {
   
@@ -8,7 +8,7 @@ class ProductsDb extends Component {
     return (
       <>
         <div className="container-fluid" >
-          <ProductList/>
+          <ListaProductos/>
         </div>
       </>
     );

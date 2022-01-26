@@ -5,7 +5,8 @@ import {Link,Route,Routes} from 'react-router-dom';
 
 import ContentWrapper from './ContentWrapper';
 import ProductsDb from './ProductsDb';
-import TablaUsuario from '../components/TablaUsuario'
+import UsersDb from '../components/UsersDb'
+
 import NotFound from './NotFound';
 
 function SideBar(){
@@ -14,12 +15,12 @@ function SideBar(){
 
 
             {/*<!-- Sidebar -->*/}
-            <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul className="navbar-nav bg-light bg-gradient sidebar sidebar-dark accordion border border-success" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
                 <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-25" src={image} alt="LuanaCake"/>
+                        <img className="w-25" src={image} alt="VamosLasPlantas"/>
                     </div>
                 </Link>
 
@@ -30,28 +31,28 @@ function SideBar(){
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
                         <i class="fab fa-pagelines"></i>
-                        <span> Admin Dashboard</span></Link>
+                        <span className='text-dark'> Admin Dashboard</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider"/>
 
                 {/*<!-- Heading -->*/}
-                <div className="sidebar-heading">Bienvenido</div>
+                <div className="sidebar-heading text-dark">Bienvenido</div>
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link collapsed" to="TablaUsuario">
-                        <i className="fas fa-users"></i>
-                        <span>Todos los Usuarios</span>
+                    <Link className="nav-link collapsed" to="UsersDb">
+                        <i className="fas fa-users text-dark"></i>
+                        <span className='text-dark'>Todos los Usuarios</span>
                     </Link>
                 </li>
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
                     <Link className="nav-link" to="ProductsDb">
-                        <i className="fas fa-box-open"></i>
-                        <span>Todos los Productos</span></Link>
+                        <i className="fas fa-box-open text-dark"></i>
+                        <span className='text-dark'>Todos los Productos</span></Link>
                 </li>
 
 {/*                 
@@ -68,7 +69,7 @@ function SideBar(){
             
             <Routes>
                 <Route exact path="/" element={<ContentWrapper/>} />
-                <Route  path="/TablaUsuario" element={<TablaUsuario/>} />
+                <Route  path="/UsersDb" element={<UsersDb/>} />
                 <Route  path="/ProductsDb" element={<ProductsDb/>} />
                 <Route  path="*" element={<NotFound/>} />
 

@@ -1,12 +1,10 @@
-# DASHBOARD LUANACAKE 2022
+# Dashboard VamosLasPlantas
 
 
-### INTEGRANTES 
-- Mingione, Luana
-- Carlotto, Jorge
-- Sanchez, Franco
-- Rojas, Leonel
-
+### Integrantes 
+- Tornari Maria Agustina
+- Mariano Suarez
+- Walter Emmanuel Stamm
 
 
 ### `npm start`

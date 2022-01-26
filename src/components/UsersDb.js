@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UserList from "./UserList"
+import ListaUsuarios from "./ListaUsuarios"
 
 
 class UsersDb extends Component {
@@ -7,7 +7,7 @@ class UsersDb extends Component {
     return (
       <>
         <div className="container-fluid">
-          <UserList/>
+          <ListaUsuarios/>
         </div>
       </>
     );

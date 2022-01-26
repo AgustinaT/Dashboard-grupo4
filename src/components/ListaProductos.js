@@ -3,22 +3,22 @@ import {useState} from 'react';
 import {useEffect} from 'react'
 import TopBar from './TopBar'
 
-function UsersList() {
+function ListaProductos() {
 
     const[items,setItems]= useState([]);
 
     useEffect(()=>{
-        const getUsers = async()=>{
-            const res = await fetch("/api/users/top");
+        const getProducts = async()=>{
+            const res = await fetch("/api/products/paginado");
             const data = await res.json();
             setItems(data)
         };
-        getUsers();
+        getProducts();
     },[]);
     
     //console.log(items) //
-    const fetchUsers = async(currentPage) => {
-        const res = await fetch(`/api/users/top?page=${currentPage}&size=5`);
+    const fetchProducts = async(currentPage) => {
+        const res = await fetch(`/api/products/paginado?page=${currentPage}&size=5`);
         const data = await res.json();
         return data;
     };
@@ -27,8 +27,8 @@ function UsersList() {
     console.log(data.selected);
     
     let currentPage = data.selected
-    const usersServer = await fetchUsers(currentPage);
-    setItems(usersServer) 
+    const productsServer = await fetchProducts(currentPage);
+    setItems(productsServer) 
     }
 
   return (
@@ -38,25 +38,31 @@ function UsersList() {
             <TopBar/>
         <div className="card-body">
          <div className="table-responsive">
-         <h1 className="h3 mb-2 text-gray-800">Lista de todos los Usuarios.</h1>
+         <h1 className="h3 mb-2 text-gray-800">Lista de todos los Productos.</h1>
             {items.map((item)=> {
             return (
                <table
-                className="table table-bordered"
+                className="table table-bordered table table-success table-striped" 
                 id="dataTable"
                 width="100%"
                 cellspacing="0">
                     <thead>
                       <tr>
                         <th>ID</th>
-                        <th>Email Registrado</th>
+                        <th>Producto</th>
+                        <th>Descripcion</th>
+                        <th>Categoria</th>
+                        <th>Precio</th>
                       </tr>
                     </thead>
                     <tfoot></tfoot>
                     <tbody>
                           <tr>
                             <td>{item.id}</td>
-                            <td>{item.email}</td>
+                            <td>{item.product}</td>
+                            <td>{item.description}</td>
+                            <td>{item.category_id}</td>
+                            <td>{item.price}</td>
                           </tr>
                     </tbody>
                   </table>
@@ -67,9 +73,9 @@ function UsersList() {
        previousLabel={'<<'}
        nextLabel={'>>'}
        breakLabel ={'...'}
-       pageCount={6}
-       marginPagesDisplayed={2}
-       pageRangeDisplayed={2}
+       pageCount={2}
+       marginPagesDisplayed={1}
+       pageRangeDisplayed={1}
        onPageChange ={handlePageclick}
        containerClassName={'pagination justify-content-center'}
        pageClassName={'page-item'}
@@ -89,4 +95,4 @@ function UsersList() {
   );
 }
 
-export default UsersList;
+export default ListaProductos;

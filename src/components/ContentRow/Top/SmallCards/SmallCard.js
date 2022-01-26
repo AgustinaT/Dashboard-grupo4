@@ -4,16 +4,16 @@ function SmallCard(props){
     return(
         <React.Fragment>
             <div className="col-md-12 mb-12">
-                <div className={`card border-left-primary shadow h-100 py-2`}>
+                <div className={`card border-bottom-success shadow h-100 py-2`}>
                     <h4>Cantidad de Usuarios Registrados</h4>
                     <div className="card-body">
                         <div className="row no-gutters align-items-center">
                             <div className="col mr-2">
-                                <div className={`text-XL font-weight-bold text-primary text-uppercase mb-1`}> {props.total}</div>
+                                <div className={`text-XL font-weight-bold text-success text-uppercase mb-1`}> {props.total}</div>
                                 
                             </div>
                             <div className="col-auto">
-                                <i className={`fas fa-users fa-2x text-gray-300`}></i>
+                                <i className={`fas fa-users fa-2x text-gray-500`}></i>
                             </div>
                         </div>
                     </div>
